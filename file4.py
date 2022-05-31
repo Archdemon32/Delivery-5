@@ -6,7 +6,7 @@ import pymongo
 # Defining a connection function
 def get_database():
     client = MongoClient("mongodb://localhost:27017/Deliv5")
-    return client['Deliv5']
+    return client['mydb']
 if __name__ == "__main__":
     dbname = get_database()
 # Finding all the items inside the collection
@@ -24,4 +24,4 @@ channel = connection1.channel()
 
 channel.queue_declare(queue='data')
 
-channel.basic_publish(exchange='', routing_key='data', body=("Records retrieved successfully from Deliv5"))
+channel.basic_publish(exchange='', routing_key='data', body=("Records retrieved successfully from Deliv5 collection from MongoDB"))
