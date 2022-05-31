@@ -8,8 +8,8 @@ df = pd.read_csv(r"C:\Users\archd\Desktop\demo\try.csv", index_col=False, delimi
 
 # Making a Connection with MongoClient
 def get_database():
-    client = MongoClient("mongodb://localhost:27017/Deliv5")
-    return client['Deliv5']
+    client = MongoClient("mongodb://localhost:27017/mydb")
+    return client['mydb']
 if __name__ == "__main__":
     dbname = get_database()
 # Inserting customer data into Deliv5 collection in MongoDB
@@ -23,5 +23,5 @@ channel = connection.channel()
 
 channel.queue_declare(queue='data')
 
-channel.basic_publish(exchange='', routing_key='data', body=("Record inserted successfully into Deliv5 collection"))
+channel.basic_publish(exchange='', routing_key='data', body=("Record inserted successfully into Deliv5 collection in MongoDB"))
 connection.close()
