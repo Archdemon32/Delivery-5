@@ -2,13 +2,13 @@
 
 Descrition of files:
 
-File.py - Inserting information into an SQL database from a csv file
+file.py - Inserting information into an SQL database from a csv file
 
-File2.py - Retreiving information from an SQL database into a csv file
+file2.py - Retreiving information from an SQL database into a csv file
 
-File3.py - Inserting information into a NOSQL database from a csv file
+file3.py - Inserting information into a NOSQL database from a csv file
 
-File4.py - Retreiving information from a NOSQL database into a csv file
+file4.py - Retreiving information from a NOSQL database into a csv file
 
 receiveDeliv5.py - Establishing a receiver for messages sent by the other scripts
 
