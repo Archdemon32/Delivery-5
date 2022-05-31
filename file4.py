@@ -14,7 +14,7 @@ collection_name = dbname["Deliv5"]
 item_details = collection_name.find()
 # Writing all the found data into a csv
 for item in item_details:
-    with open('Customer_Data.csv','a+') as l:
+    with open('data/NOSQL_Customer_data.csv','a+') as l:
         l.write(str(item))
         l.write('\n')
 # Using rabitMQ to send a message
