@@ -4,17 +4,17 @@ import pika
 # Connecting to the databse
 try:
     connection = mc.connect(host='dp-base.mysql.database.azure.com',
-                                         database='db_test',
+                                         database='mydatabase',
                                          user='archdemon32@dp-base',
                                          password='Pepega321998')
 # Selecting table and fetching the data
-    sql_select_Query = "select * from all_csv_files"
+    sql_select_Query = "select * from test2"
     cursor = connection.cursor()
     cursor.execute(sql_select_Query)
     records = cursor.fetchall()
 # Writting the data into a csv file
     for row in records:
-        with open('SQL_Customer_data,'a+') as l:
+        with open('data/SQL_Customer_data.csv','a+') as l:
             l.write(str(row))
             l.write('\n')
 # Error excption
@@ -29,6 +29,6 @@ finally:
 
         channel.queue_declare(queue='data')
 
-        channel.basic_publish(exchange='', routing_key='data', body=("Records retrieved successfully from MYSQL"))
+        channel.basic_publish(exchange='', routing_key='data', body=("Records retrieved successfully from MYSQL database"))
         connection.close()
         cursor.close()
