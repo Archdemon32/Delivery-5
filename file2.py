@@ -14,7 +14,7 @@ try:
     records = cursor.fetchall()
 # Writting the data into a csv file
     for row in records:
-        with open('Data.csv','a+') as l:
+        with open('SQL_Customer_data,'a+') as l:
             l.write(str(row))
             l.write('\n')
 # Error excption
